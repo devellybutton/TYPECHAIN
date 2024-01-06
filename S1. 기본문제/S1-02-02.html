@@ -9,23 +9,15 @@
     <script>
         function solution(a, b, c) {
             let answer;
-            let longest;
-            // 가장 긴 변 구하기
-            if (a < b) {
-                longest = b;
-            } else {
-                longest = a;
-            }
+            let sum = a + b + c;
+            if (a < b) max = b;
+            else max = a;
+            if (max < c) max = c;
 
-            if (longest < c) {
-                longest = c;
-            }
+            // 전체 합(sum)에서 최댓값(max)를 뺀 길이 = 두 변의 길이의 합
+            // 가장 긴 변 < 두 변 길이의 합 ==> 삼각형 가능
+            answer = (sum - max > max) ? 'YES' : 'NO';
 
-            // 가장 긴 변 < 두 변 길이의 합
-            arr = [a, b, c];
-            sum = arr.filter(ele => ele !== longest).reduce((acc, cur) => acc + cur, 0)
-            answer = sum > longest ? 'YES' : 'NO';
-            
             return answer;
         }
 
