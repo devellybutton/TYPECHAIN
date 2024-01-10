@@ -9,12 +9,21 @@
     <script>
         function solution(str) {
             // substring, substr 활용
-            // substring(2, 3) : 2번 인덱스부터 3개
-            // substr(2, 3) : 2번 인덱스와 3번 인덱스 직전까지 (2번 인덱스만)
+            // substring(2, 3) : 2번 인덱스와 3번 인덱스 직전까지 (2번 인덱스만)
+            // substr(2, 3) : 2번 인덱스부터 3개
+            /*
             let answer;
             let mid = Math.floor(str.length / 2);
-            if (s.length % 2 == 0) answer = str.substr(mid - 1, mid)
-            else answer = str.substr(mid)
+            if (str.length % 2 == 0) answer = str.substr(mid - 1, 2)
+            else answer = str.substr(mid, 1)
+            return answer;
+            */
+
+            // substring
+            let answer;
+            let mid = Math.floor(str.length / 2);
+            if (str.length % 2 == 0) answer = str.substring(mid - 1, mid + 1)
+            else answer = str.substring(mid, mid + 1)
             return answer;
         }
         let str1 = "Study";
