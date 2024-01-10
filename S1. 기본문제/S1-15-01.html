@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가운데 문자 출력</title>
+</head>
+<body>
+    <script>
+        function solution(str) {
+            // str를 배열로 만들어서 가운데 번째 원소 추출
+            let splitedArray = str.split('');
+            let half = splitedArray.length / 2;
+
+            if (str.length % 2 == 0) return splitedArray[half - 1] + splitedArray[half];
+            else return splitedArray[Math.trunc(half)];
+        }
+        let str1 = "Study";
+        console.log(solution(str1)); // u
+        let str2 = "good";
+        console.log(solution(str2))  // oo
+    </script>
+</body>
+</html>

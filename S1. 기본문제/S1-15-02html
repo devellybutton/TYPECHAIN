@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가운데 문자 출력</title>
+</head>
+<body>
+    <script>
+        function solution(str) {
+            // substring, substr 활용
+            // substring(2, 3) : 2번 인덱스부터 3개
+            // substr(2, 3) : 2번 인덱스와 3번 인덱스 직전까지 (2번 인덱스만)
+            let answer;
+            let mid = Math.floor(str.length / 2);
+            if (s.length % 2 == 0) answer = str.substr(mid - 1, mid)
+            else answer = str.substr(mid)
+            return answer;
+        }
+        let str1 = "Study";
+        console.log(solution(str1)); // u
+        let str2 = "good";
+        console.log(solution(str2))  // oo
+    </script>
+</body>
+</html>
