@@ -8,6 +8,9 @@
 <body>
     <script>
         // reduce 활용
+        // 고차함수 : 함수의 매개변수 인수로 함수를 전달받는 함수
+        // 콜백함수 : 매개변수로 전달되는 함수
+
         function solution(arr) {
             return arr.reduce((maxStr, currentStr) => {
                 return currentStr.length > maxStr.length ? currentStr : maxStr}, arr[0]);

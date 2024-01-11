@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>보이는 학생</title>
+</head>
+<body>
+    <script>
+        // 배열이 2개라서 입력값 2개
+        function solution(a, b) {
+            // 1:가위, 2:바위, 3:보
+            // 배열 a원소와 배열b의 원소 비교
+            // 1 vs 2 => 2, 1 vs 3 => 1, 2 vs 3 => 3
+            
+            // 빈 배열 생성
+            let matching = [];
+            let answer = "";
+            
+            // 원소 삽입
+            // [[2,1], [3,1], [3,2], [1,2], [3,3]]
+            for (i = 0; i < N; i++) {
+                matching.push([a[i], b[i]])
+            }
+
+            for (let i = 0; i < matching.length; i++) {
+                if (matching[i][0] === matching[i][1]) {
+                    answer += "D";  // 비긴 경우
+                } else {   
+                    if (matching[i][0] < matching[i][1]) {
+                        if (matching[i][0] === 1 && matching[i][1] === 3) answer += "A";
+                        else answer += "B";
+                    } else {
+                        if (matching[i][0] === 3 && matching[i][1] === 1) answer += "B";
+                        else answer += "A";
+                    }
+                }
+            }
+            // 문자열에는 join메서드 사용 불가
+            return answer.split('').join('\n');
+        }
+        let N = 5;
+        let a = [2, 3, 3, 1, 3];
+        let b = [1, 1, 2, 2, 3];
+        console.log(solution(a, b));
+        /*
+        A
+        B
+        A
+        B
+        D
+        */
+    </script>
+</html>
