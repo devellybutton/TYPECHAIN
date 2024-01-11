@@ -7,48 +7,20 @@
 </head>
 <body>
     <script>
-        // 배열이 2개라서 입력값 2개
-        function solution(a, b) {
-            // 1:가위, 2:바위, 3:보
-            // 배열 a원소와 배열b의 원소 비교
-            // 1 vs 2 => 2, 1 vs 3 => 1, 2 vs 3 => 3
+        function solution(arr) {
+            let max = arr[0];  // arr[i] 이전 사람 중 가장 큰 사람 
+            let count = 1;  // 보이는 사람 수, 맨 앞 사람은 보이니까 1부터 시작
             
-            // 빈 배열 생성
-            let matching = [];
-            let answer = "";
-            
-            // 원소 삽입
-            // [[2,1], [3,1], [3,2], [1,2], [3,3]]
-            for (i = 0; i < N; i++) {
-                matching.push([a[i], b[i]])
-            }
-
-            for (let i = 0; i < matching.length; i++) {
-                if (matching[i][0] === matching[i][1]) {
-                    answer += "D";  // 비긴 경우
-                } else {   
-                    if (matching[i][0] < matching[i][1]) {
-                        if (matching[i][0] === 1 && matching[i][1] === 3) answer += "A";
-                        else answer += "B";
-                    } else {
-                        if (matching[i][0] === 3 && matching[i][1] === 1) answer += "B";
-                        else answer += "A";
-                    }
+            for (i = 1; i < arr.length; i++) {
+                if (max < arr[i]) {
+                    max = arr[i];
+                    count++;
                 }
             }
-            // 문자열에는 join메서드 사용 불가
-            return answer.split('').join('\n');
+            return count;
         }
-        let N = 5;
-        let a = [2, 3, 3, 1, 3];
-        let b = [1, 1, 2, 2, 3];
-        console.log(solution(a, b));
-        /*
-        A
-        B
-        A
-        B
-        D
-        */
+        let N = 8;
+        let arr = [130, 135, 148, 140, 145, 150, 150, 153];
+        console.log(solution(arr));
     </script>
 </html>
