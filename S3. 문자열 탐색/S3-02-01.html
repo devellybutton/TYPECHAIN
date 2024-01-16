@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>펠린드롬</title>
+</head>
+<body>
+    <script>
+        function solution(str) {
+            // 영어 이외의 문자는 무시, 대소문자 구분 X
+            // 알파벳 제거 후 뒤집은 거 똑같으면 true
+            let answer = "NO";
+            let arr = [...str.match(/[a-zA-Z]/g)]
+            if (arr.join('').toLowerCase() === arr.reverse().join('').toLowerCase()) answer = "YES";
+            return answer;
+        }
+        let str1 = "found7, time: study; Yduts; emit, 7Dnuof";  
+        console.log(solution(str1));  // YES
+        let str2 = "I see ,YOU";  
+        console.log(solution(str2));  // NO
+    </script>
+</html>

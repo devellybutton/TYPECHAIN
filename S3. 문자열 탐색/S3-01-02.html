@@ -3,19 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>펠린드롬</title>
+    <title>회문 문자열</title>
 </head>
 <body>
     <script>
         function solution(str) {
-            let answer = "YES";
-            for (i = 0; i < str.length / 2; i++) {
-                if (str[i].toLowerCase() !== str[str.length - i - 1].toLowerCase()) {
-                    answer = "NO";
-                    break;
-                }
-            }
-
+            // 배열 원소 뒤집어서 원래 글자와 같으면 YES 반환
+            // reverse()
+            let answer = "NO";
+            let loweredS = str.toLowerCase()
+            if (loweredS.split('').reverse().join('') === loweredS) answer = "YES";
             return answer;
         }
         let str1 = "gooG";  

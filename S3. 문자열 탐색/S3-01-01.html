@@ -8,6 +8,7 @@
 <body>
     <script>
         function solution(str) {
+            // for문 돌릴 거면 절반만 순회, 아니면 reverse() 쓰기
             let answer = "YES";
             for (i = 0; i < str.length / 2; i++) {
                 if (str[i].toLowerCase() !== str[str.length - i - 1].toLowerCase()) {
@@ -15,7 +16,7 @@
                     break;
                 }
             }
-
+            // for문 다 통과하면 회문이 맞으므로 YES를 리턴하도록 함
             return answer;
         }
         let str1 = "gooG";  
