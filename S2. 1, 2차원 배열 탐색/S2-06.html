@@ -8,31 +8,9 @@
 <body>
     <script>
         function solution(N, arr) {
-            let row = 0;
-            let column = 0;
-            let diagonal_left = 0;
-            let diagonal_right = 0;
-            let answer = 0;
+            
 
-            // 행/열 최대값
-            for (i = 0; i < arr.length; i++) {
-                row = column = 0;
-                for (j = 0; j < arr.length; j++) {
-                    row += arr[i][j]
-                    column += arr[j][i]
-                }
-                answer1 = Math.max(row, column)
-            }
-
-            // 대각선 최대값
-            for (i = 0; i < arr.length; i++) {
-                    diagonal_left += arr[i][i]
-                    diagonal_right += arr[i][arr.length - 1 - i]
-                }
-                answer2 = Math.max(diagonal_left, diagonal_right)
-            }
-
-            return Math.max(answer1, answer2);
+            
             }
             let N = 5;
             let arr = [[10, 13, 10, 12, 15],
