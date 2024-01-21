@@ -8,6 +8,9 @@
 <body>
     <script>
         function solution(str) {
+            // 이 풀이는 틀린 풀이임
+            // ( ) ) ( ) ( --> 반례
+
             // ")"보다 "("가 먼저 나와야 함.
             // "("의 개수와 ")"의 개수가 같아야 함.
             let left = [...str].filter(el => el === "(").length;
