@@ -7,16 +7,31 @@
 </head>
 <body>
     <script>
+        // 문제를 잘못 이해했음. 어렵지 않은 문제였는데ㅠ
         function solution(N, arr) {
             let answer = Number.MIN_SAFE_INTEGER;
             let sum1 = 0;
             let sum2 = 0;
+            let n = N;
 
-            for (i = 0; i < arr.length; i++) {
-                for (i = 0; j <)
+            // 각 행의 합, 각 열의 합
+            for (let i = 0; i < arr.length; i++) {
+                sum1 = sum2 = 0;  // 각 행이나 열마다 저장해야하므로 초기화 필수!
+                for (let j = 0; j < arr.length; j++) {
+                    sum1 += arr[i][j];
+                    sum2 += arr[j][i];
+                }
+                answer = Math.max(sum1, sum2, answer)
             }
 
-
+            // 두 대각선의 합
+            sum1 = sum2 = 0;  // 초기화 
+            for (let i = 0; i < arr.length; i++) {
+                sum1 += arr[i][i]
+                sum2 += arr[i][n-1-i];
+            }
+            // console.log(sum1, sum2) // 155, 144
+            return Math.max(sum1, sum2, answer)
 
             }
             let N = 5;
