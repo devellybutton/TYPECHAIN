@@ -3,28 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>올바른 괄호</title>
+    <title>괄호문자 제거</title>
 </head>
 <body>
     <script>
         function solution(str) {
-            // 이 풀이는 틀린 풀이임
-            // ( ) ) ( ) ( --> 반례
-
-            // ")"보다 "("가 먼저 나와야 함.
-            // "("의 개수와 ")"의 개수가 같아야 함.
-            let left = [...str].filter(el => el === "(").length;
-            let right = [...str].length - left;
-
-            if (str[0] === "(" && left === right) {
-                return "YES";
-            }
-            else return "NO";
-            }
-            let str1 = "(()(()))(()"
-            console.log(solution(str1));  // NO
-            let str2 = "(())()"
-            console.log(solution(str2));  // YES
+            return str.replace(/\(^\.*\)/g, '');
+        }
+            let str1 = "(A(BC)D)EF(G(H)(IJ)K)LM(N)"
+            console.log(solution(str1));  // EFLM
+            let str2 = "((CAKE)(CK))BA((ABC))"
+            console.log(solution(str2));  // BA
     </script>
 </body>
 </html>
