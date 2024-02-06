@@ -8,23 +8,12 @@
 <body>
     <script>
         function solution(str) {
-            let result = 0;
-
-            if (str[0] === ")") return "No"
-
-            for (let char of str) {
-                result += char === "(" ? 1 : -1
-            }
-
-            return result === 0 ? "YES" : "NO"
 
             }
             let str1 = "(()(()))(()"
             console.log(solution(str1));  // NO
             let str2 = "(())()"
             console.log(solution(str2));  // YES
-            let str3 = ")())()()"
-            console.log(solution(str3));  // NO
     </script>
 </body>
 </html>
