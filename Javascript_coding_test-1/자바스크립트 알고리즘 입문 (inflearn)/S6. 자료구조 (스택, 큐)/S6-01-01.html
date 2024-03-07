@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>올바른 괄호</title>
+</head>
+<body>
+    <script>
+        function solution(str) {
+            const stack = [];
+
+            if (str[0] === "(") return "NO"
+
+            for (let char of str) {
+                if (char === "(") stack.push(char)  // 여는 괄호
+                else {  // 닫는 괄호
+                    if (stack.length === 0) return "NO" 
+                    stack.pop()
+                }
+            }
+            return stack.length === 0 ? "YES" : "NO"
+
+            }
+            let str1 = "(()(()))(()"
+            console.log(solution(str1));  // NO
+            let str2 = "(())()"
+            console.log(solution(str2));  // YES
+            let str3 = ")())()()"
+            console.log(solution(str3));  // NO
+    </script>
+</body>
+</html>

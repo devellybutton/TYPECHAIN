@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>홀수</title>
+</head>
+<body>
+    <script>
+        function solution(arr) {
+            new_arr = arr.filter(a => (a % 2) != 0).sort((a, b) => a - b)
+            sum = new_arr.reduce((a, b) => a + b);
+            console.log(new_arr)
+            return sum, new_arr[0];
+        }
+        let arr = [12, 77, 38, 41, 53, 92, 85];
+        console.log(solution(arr));  
+        // 256
+        // 41
+    </script>
+</body>
+</html>

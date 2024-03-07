@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가위바위보</title>
+</head>
+<body>
+    <script>
+        // 배열이 2개라서 입력값 2개
+        // 굳이 배열 a와 배열 b의 원소를 새로운 배열에 추가할 필요가 없음
+        // 바로 a와 b를 불러와서 비교하면 됨.
+        // 비교할 때는 기준 잡기 -> 여기서는 A가 기준
+        // 1:가위, 2:바위, 3:보
+
+        function solution(a, b) {
+            let answer = "";
+            for (i = 0; i < a.length; i++) {
+                if (a[i] === b[i]) answer += "D";
+                else if (a[i] === 1 && b[i] === 3) answer += "A";
+                else if (a[i] === 3 && b[i] === 1) answer += "B";
+                else if (a[i] === 1 && b[i] === 2) answer += "B";
+                else if (a[i] === 2 && b[i] === 3) answer += "B";
+                else answer += "A";
+            }
+            return answer.split('').join('\n');
+        }
+        let N = 5;
+        let a = [2, 3, 3, 1, 3];
+        let b = [1, 1, 2, 2, 3];
+        console.log(solution(a, b));
+        /*
+        A
+        B
+        A
+        B
+        D
+        */
+    </script>
+</body>
+</html>

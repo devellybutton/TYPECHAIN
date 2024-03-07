@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>삼각형 판별하기</title>
+</head>
+<body>
+    <script>
+        function solution(a, b, c) {
+            let answer;
+            let sum = a + b + c;
+            if (a < b) max = b;
+            else max = a;
+            if (max < c) max = c;
+
+            // 전체 합(sum)에서 최댓값(max)를 뺀 길이 = 두 변의 길이의 합
+            // 가장 긴 변 < 두 변 길이의 합 ==> 삼각형 가능
+            answer = (sum - max > max) ? 'YES' : 'NO';
+
+            return answer;
+        }
+
+        console.log(solution(2, 5, 1));  // NO;
+        console.log(solution(6, 4, 11));  // NO;
+        console.log(solution(9, 10, 12));  // YES;
+        console.log(solution(6, 7, 11)); // YES;
+    </script>
+</body>
+</html>

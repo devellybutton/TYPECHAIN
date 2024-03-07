@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문자 찾기</title>
+</head>
+<body>
+    <script>
+        function solution(str, letter) {
+            // filter로 같은 문자 추출하여 배열 길이 (원소 개수)
+            // return str.split('').filter(ele => ele === letter).length
+
+            // reduce 사용
+            // 같으면 1증가, 아니면 0
+            return str.split('').reduce((acc, cur) => (cur === letter ? acc + 1: acc), 0);
+
+        }
+        let str = "COMPUTERPROGRAMMING";
+        let letter = "R"
+        console.log(solution(str, letter));  
+    </script>
+</body>
+</html>

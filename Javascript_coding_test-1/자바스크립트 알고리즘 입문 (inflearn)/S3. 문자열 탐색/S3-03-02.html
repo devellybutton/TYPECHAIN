@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>숫자만 추출</title>
+</head>
+<body>
+    <script>
+        function solution(str) {
+            // isNaN, isInteger 메서드 활용 가능
+            // 문자 순회하면서 숫자인지 판별 -> 더해준다
+            let answer = "";
+            for (let x of str) {
+                if (!isNaN(x)) answer += x;
+            }
+            return Number(answer)  // Number나 parseInt를 해야 중복되는 0이 없어짐
+        }
+        let str1 = "tge0a1h205er";  
+        console.log(solution(str1));  // 1205
+        let str2 = "g0en2T0s8eSoft";  
+        console.log(solution(str2));  // 208
+    </script>
+</html>
