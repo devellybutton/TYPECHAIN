@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>교육과정 설계</title>
+</head>
+<body>
+    <script>
+        function solution(a, b) {
+            // a(필수)를 큐로 만들기
+            // b(계획) 순회하면서 a(필수) 원소를 지우기
+            // a가 순서대로 모두 지워지면 YES, 아니면 NO
+                let queue = a.split('');
+                let arr = b.split('');
+                // console.log(queue, arr)
+                for (let i = 0; i < arr.length; i++) {  // arr을 순회
+                    if (queue[0] === arr[i]) {
+                        queue.shift()
+                    }
+                    console.log(i, queue)
+                }
+                return queue.length === 0 ? "YES" : "NO"
+            }
+            console.log(solution("CBA", "CBDAGE"));  // YES
+            console.log(solution("ADF", "ABFCD"));  // NO
+            console.log(solution("ACDF", "BDEFG"))  // NO
+            console.log(solution("BEF", "ABCDEF"))  // YES
+            console.log(solution("ABC", "BAC")) // NO
+    </script>
+</body>
+</html>

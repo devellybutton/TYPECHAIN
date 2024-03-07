@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>펠린드롬</title>
+</head>
+<body>
+    <script>
+        function solution(str) {
+            // toLowerCase() 먼저 해주고 정규식에서 알파벳만 추리기
+            let answer = "YES";
+            s = s.toLowerCase().replace(/[^a-z]/g, "");
+            if (s.split('').reverse().join('') !== s) return "NO";
+            return answer;
+        }
+        let str1 = "found7, time: study; Yduts; emit, 7Dnuof";  
+        console.log(solution(str1));  // YES
+        let str2 = "I see ,YOU";  
+        console.log(solution(str2));  // NO
+    </script>
+</html>

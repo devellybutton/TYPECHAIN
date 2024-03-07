@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>중복 문자 제거</title>
+</head>
+<body>
+    <script>
+        // array.indexOf(ele)
+        // 번외 : 중복 문자가 몇 개 있는지 확인
+        function solution(s) {
+            let answer = 0;  // 중복 문자 개수
+            let pos = s.indexOf('k');  // 첫번째로 나온 위치(인덱스)
+            while(pos !== -1) {  // 찾지 못하면 끝남
+                answer++;  
+                pos = s.indexOf('k', pos + 1);  // 그 다음 위치
+            }
+            return answer;
+        }
+        let str = "ksekkset";
+        console.log(solution(str));  
+    </script>
+</body>
+</html>

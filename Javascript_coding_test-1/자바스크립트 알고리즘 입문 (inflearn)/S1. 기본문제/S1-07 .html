@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10부제</title>
+</head>
+<body>
+    <script>
+        function solution(N, arr) {
+            /* 방법 1
+            let count = 0;
+            // 배열 원소 순회해서 10으로 나눴을 때 나머지값(일의자리) 확인
+            for (let i = 0; i < arr.length; i++) {
+                if ((arr[i] % 10) === N) count++
+            }
+            */
+
+            // 방법 2
+            // filter
+            let count = 0;
+            let answer = 0;
+            answer = arr.filter(a => (a % 10) === N).length
+            return answer
+        }
+
+        // 테스트 코드
+        let arr1 = [25, 23, 11, 47, 53, 17, 33];
+        console.log(solution(3, arr1)); // 3
+
+        let arr2 = [12, 20, 54, 30, 87, 91, 30];
+        console.log(solution(0, arr2));  // 3
+    </script>
+</body>
+</html>

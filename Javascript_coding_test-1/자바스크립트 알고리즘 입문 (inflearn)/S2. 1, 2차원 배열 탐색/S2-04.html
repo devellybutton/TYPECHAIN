@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>점수계산</title>
+</head>
+<body>
+    <script>
+        // 맞은 문제의 합을 구함
+        // 가산점 구해서 총합에 더해줌
+        // 가산점 어떻게 구함? => 연달아 나오면 1 더하는 변수 만들어줌
+        function solution(arr) {
+            let sum = arr.reduce((acc, cur) => cur + acc, 0);  // 총합
+            let consecutive = 0;  // 가산점 (연속된 1 만나면 1 증가)
+
+            for (i = 0; i < arr.length; i++) {
+                if (arr[i] === 1 && arr[i-1] !== 0) {
+                    consecutive++;
+                }
+                
+            }
+            return sum + consecutive;
+        }
+            let N = 10;
+            let arr1 = [1, 0, 1, 1, 1, 0, 0, 1, 1, 0];
+            let arr2 = [1, 1, 0, 0, 1, 0, 1, 1, 1, 0];
+            console.log(solution(arr1));
+            console.log(solution(arr2));
+    </script>
+</body>
+</html>

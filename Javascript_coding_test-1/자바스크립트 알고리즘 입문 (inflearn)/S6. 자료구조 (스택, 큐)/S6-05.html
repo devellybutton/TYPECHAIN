@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>쇠막대기</title>
+</head>
+<body>
+    <script>
+        function solution(s) {
+            let stack = [];
+            let count = 0;
+            
+            for (let i = 0; i < s.length; i++) {
+                if (s[i] === '(') stack.push('(')
+                else {
+                    if (s[i-1] === '(') {
+                        stack.pop();
+                        count += stack.length;
+                    }
+                    else {
+                        stack.pop()
+                        count++
+                    }
+                }
+            }
+            return count
+        }
+
+        let a = "()(((()())(())()))(())";
+        console.log(solution(a));  // 17
+
+        let b = "(((()(()()))(())()))(()())";
+        console.log(solution(b));  // 24
+    </script>
+</body>
+</html>

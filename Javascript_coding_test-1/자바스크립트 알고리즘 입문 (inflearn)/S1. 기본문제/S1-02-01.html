@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>삼각형 판별하기</title>
+</head>
+<body>
+    <script>
+        function solution(a, b, c) {
+            let answer;
+            let longest;
+            // 가장 긴 변 구하기
+            if (a < b) {
+                longest = b;
+            } else {
+                longest = a;
+            }
+
+            if (longest < c) {
+                longest = c;
+            }
+
+            // 가장 긴 변 < 두 변 길이의 합
+            arr = [a, b, c];
+            sum = arr.filter(ele => ele !== longest).reduce((acc, cur) => acc + cur, 0)
+            answer = sum > longest ? 'YES' : 'NO';
+            
+            return answer;
+        }
+
+        console.log(solution(2, 5, 1));  // NO;
+        console.log(solution(6, 4, 11));  // NO;
+        console.log(solution(9, 10, 12));  // YES;
+        console.log(solution(6, 7, 11)); // YES;
+    </script>
+</body>
+</html>

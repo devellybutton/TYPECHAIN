@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>괄호문자 제거</title>
+</head>
+<body>
+    <script>
+        function solution(str) {
+            // 스택 하나 만들고 
+            // 문자, '(' : 넣어주기
+            // ')' : 꺼내주기
+                const stack = [];
+                for (let char of str) {
+                    // char이 ')'
+                    // 스택의 모든 문자를 꺼내준다
+                    if (char === ')') {
+                        while (stack.pop() !== '(');
+                    }
+                    // char이 문자 혹은 '(''
+                    // 스택에 넣어준다
+                    else stack.push(char)
+                }
+                answer = stack.join('');
+                return answer;
+        }
+            let str1 = "(A(BC)D)EF(G(H)(IJ)K)LM(N)"
+            console.log(solution(str1));  // EFLM
+            
+            let str2 = "((KBC(O)D))Y(L(V)IJ)(KB)VK(N)" 
+            console.log(solution(str2));  // YVK
+    </script>
+</body>
+</html>

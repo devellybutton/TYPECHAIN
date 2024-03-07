@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>숫자만 추출</title>
+</head>
+<body>
+    <script>
+        function solution(str) {
+            // if문에서 곱하기 10은 자리수 늘려주려고 해줌
+            let answer = 0;
+            for (let x of str) {
+                if (!isNaN(x)) answer = answer * 10 + Number(x)
+            }
+            return answer;
+
+        let str1 = "tge0a1h205er";  
+        console.log(solution(str1));  // 1205
+        let str2 = "g0en2T0s8eSoft";  
+        console.log(solution(str2));  // 208
+    </script>
+</html>

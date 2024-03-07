@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>대문자 찾기</title>
+</head>
+<body>
+    <script>
+        function solution(str) {
+            // for 반복문으로 원래 문자와 해당 문자를 대문자로 변환한 것이 같은지
+            let count = 0;
+            for (let i = 0; i < str.length; i++) {
+                if (str[i] === str[i].toUpperCase()) count++;
+            }
+            return count
+        }
+        let str = "KoreaTimeGood";
+        console.log(solution(str));  
+    </script>
+</body>
+</html>
