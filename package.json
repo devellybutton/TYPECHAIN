@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "dev": "nodemon --exec ts-node src/index.ts",
+    "start": "node build/index.js"
   },
   "keywords": [],
   "author": "",
@@ -13,6 +15,9 @@
     "typescript": "^5.6.3"
   },
   "dependencies": {
-    "@types/node": "^20.8.0"
+    "@types/node": "^20.8.0",
+    "crypto": "^1.0.1",
+    "nodemon": "^3.1.7",
+    "ts-node": "^10.9.2"
   }
 }

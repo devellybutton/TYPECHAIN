@@ -1,5 +1,11 @@
 # 타입스크립트로 블록체인 만들기
 
+<details>
+<summary><i>시연 GIF</i></summary>
+
+![ezgif-4-3ab1a63d13](https://github.com/user-attachments/assets/61a6a668-30e5-4bab-a9c5-2a33918ebf6c)
+</details>
+
 ## 1. 프로젝트 세팅
 
 #### 새로운 프로젝트 생성, package.json 파일 생성
@@ -27,6 +33,12 @@ touch tsconfig.json
 npm i @types/node@20.8.0
 ```
 3. npm run build 입력시 정상 실행됨.
+
+#### ts-node 설치
+```
+npm i ts-node
+```
+- 빌드없이 타입스크립트 실행
 
 ----
 
@@ -86,6 +98,8 @@ $npm install --save-dev @types/node
 - 사용법: 자바스크립트 라이브러리를 TypeScript에서 사용하려면 해당 라이브러리의 타입 정의 파일(.d.ts)이 필요함.
 
 ### 2) JSDoc
+![ezgif-4-6d7533af97](https://github.com/user-attachments/assets/f9196d4d-e8b0-428a-afe7-d9c556401102)
+
 - 역할: 자바스크립트 파일에 타입 정보를 주석 형식으로 추가하여 TypeScript에서 사용할 수 있게 함.
 - 링크: https://www.typescriptlang.org/docs/handbook/jsdoc-supported-types.html
 - 예: 
